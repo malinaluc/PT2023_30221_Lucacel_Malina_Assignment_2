@@ -12,10 +12,6 @@ public class Client extends JLayeredPane {
     private final AtomicInteger tService;
     JLabel timpClientLabel;
 
-
-
-
-
     public Client(Integer id, Integer tArrival, Integer tService) {
         this.id = id;
         this.tArrival = tArrival;
@@ -39,15 +35,10 @@ public class Client extends JLayeredPane {
 
         this.setVisible(true);
     }
-
     public void arrivalToServiceTime() //Trecere de la tArrival la tService
     {
-//        int time = gettService().get();
         this.timpClientLabel.setText(String.valueOf(tService));
-//        this.add(timpClientLabel);
-
     }
-
 
     public int getId() {
         return id;
@@ -65,8 +56,6 @@ public class Client extends JLayeredPane {
     {
         int aux = tService.decrementAndGet();
         timpClientLabel.setText(String.valueOf(aux));
-
-        //this.add(timpClientLabel);
         return aux;
     }
 }

@@ -23,7 +23,6 @@ public class MainFrameController {
         mainFrameView = new MainFrameView();
         GUIFrameSinglePointAccess.changePanel(mainFrameView.getMainPanel(),"Simulare cozi");
 
-
         randomClientsGenerator(noOfClients,tArrivalMin,tArrivalMax,tServiceMin,tServiceMax,mainFrameView.getCoadaClientiPanel());
 
         for(int i = 0 ; i< noOfQueues ;i++)
@@ -46,7 +45,7 @@ public class MainFrameController {
         for(int i = 0 ; i < n; i++) {
             arrival = (int)Math.floor(Math.random()* (tArrivalMax - tArrivalMin + 1) + tArrivalMin);
             service = (int)Math.floor(Math.random()* (tServiceMax - tServiceMin + 1) + tServiceMin);
-//            System.out.println("LOG_test1: SERVICE = " + service + "\n");
+
             Client client = new Client(i+1,arrival,service);
             clientPanel.add(client);
 
@@ -107,9 +106,7 @@ public class MainFrameController {
                 casaAux = casaCurenta;
             }
         }
-
         casaAux.addClient(client);
-
     }
 
     public static boolean nuMaiAvemClienti()
@@ -121,7 +118,6 @@ public class MainFrameController {
         if(clientiInAsteptare.isEmpty()) return true;
         return false;
     }
-
         public static String clientiInAsteaptareLOG()
     {
         StringBuilder sb = new StringBuilder();
@@ -134,7 +130,6 @@ public class MainFrameController {
                 sb.append(";  ");
             }
         }
-        System.out.println(sb.toString());
         return sb.toString();
     }
 
@@ -158,11 +153,6 @@ public class MainFrameController {
             }
             sb.append("\n");
         }
-        System.out.println(sb.toString());
         return sb.toString();
-    }
-
-    public HashMap<Integer, ArrayList<Client>> getClientiInAsteptare() {
-        return clientiInAsteptare;
     }
 }

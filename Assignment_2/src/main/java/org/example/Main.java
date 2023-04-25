@@ -38,11 +38,9 @@ public class Main  {
         public static void main(String[] args){
             MainFrameController mainFrameController;
             mainFrameController = new MainFrameController();
-            mainFrameController.startLogic(20, 6, 30, 2, 15,2, 7);
+            mainFrameController.startLogic(20, 4, 50, 2, 15,5, 9);
         }
 
     }
-
-
 
 }

@@ -12,7 +12,6 @@ public class Timer extends JPanel {
     private JLabel secundeLabel;
     private JLabel timerLabel;
     private final Integer tSimulationMax;
-
     private FileOutputStream LOG;
 
     {
@@ -44,7 +43,6 @@ public class Timer extends JPanel {
                         secundeLabel.setText(String.valueOf(sec));
                     }
                     MainFrameController.distribuireClienti(sec);
-
                     Thread.sleep(1000);
                     sec++;
                     LOGfile();
@@ -61,11 +59,6 @@ public class Timer extends JPanel {
         });
         timer.start();
     }
-
-    public static int getSec() {
-        return sec;
-    }
-
     private void LOGfile() throws IOException {
         LOG.write(("Time " + sec +"\n").getBytes());
         LOG.write(MainFrameController.clientiInAsteaptareLOG().getBytes());
